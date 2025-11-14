@@ -1,0 +1,42 @@
+﻿@model List<crud.Models.Product>
+
+@{
+    ViewData["Title"] = "ProductTable";
+}
+
+<h1>ProductTable</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.productId</td>
+                <td>@item.productName</td>
+                <td>@item.Description</td>
+                <td>@item.Category</td>
+                <td>@item.productPrice</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.productId" class="btn btn-sm btn-primary">Edit</a>
+                    |
+                    <form asp-action="Delete" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@item.productId" />
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index">Add New Product</a>
