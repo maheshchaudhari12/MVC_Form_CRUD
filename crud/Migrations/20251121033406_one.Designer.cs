@@ -11,8 +11,8 @@ using crud.Data;
 namespace crud.Migrations
 {
     [DbContext(typeof(productDbContext))]
-    [Migration("20251114051736_first")]
-    partial class first
+    [Migration("20251121033406_one")]
+    partial class one
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

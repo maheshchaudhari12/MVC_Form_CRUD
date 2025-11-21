@@ -6,8 +6,7 @@ namespace crud.Data
 {
     public class productDbContext : DbContext
     {
-        //private readonly DbContextOptions ;
-
+        
         public productDbContext(DbContextOptions<productDbContext> option):base(option)
         {
         }
